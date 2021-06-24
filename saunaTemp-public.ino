@@ -56,7 +56,7 @@ void loop() {
    Serial.print(temperatureC);
    Serial.println("ºC");
   
-    if (temperatureC > 55) {
+    if (temperatureC > 55) { // We want the information only when degrees are above 55 celcius.
      WiFiClient wifiClient;
      WiFiClientSecure httpsClient;
        if ((millis() - lastTime) > timerDelay) {
@@ -114,7 +114,7 @@ void loop() {
         Serial.println("closing connection");
           
         delay(2000);  //GET delay 2 seconds
-        lastTime = lastTime + 300000;
+        lastTime = lastTime + 300000; // Add 5 minutes to the timer. We only want this information every 5 minutes.
     }
     }
   }
